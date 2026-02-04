@@ -1,0 +1,124 @@
+<div class="container my-4">
+  <h2 class="text-center mb-4 text-primary">🏥 Patient Management System</h2>
+
+  <div class="row g-4">
+    <!-- Patient Form -->
+    <div class="col-lg-4">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">Add Patient</div>
+
+        <div class="card-body">
+          <form [formGroup]="patientForm">
+            <div class="mb-3">
+              <label class="form-label">Patient Name</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter name"
+                formControlName="name"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Date of Birth</label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="date_of_birth"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Gender</label>
+              <select class="form-select" formControlName="gender">
+                <option selected disabled>Select</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Phone Number</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter phone number"
+                formControlName="phone_number"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Address</label>
+              <textarea
+                class="form-control"
+                rows="2"
+                placeholder="Enter address"
+                formControlName="address"
+              ></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Admission Date</label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="admission_date"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Discharge Date</label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="discharge_date"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100" (click)="addpatient()">
+              Save Patient
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patient List -->
+    <div class="col-lg-8">
+      <div class="card shadow">
+        <div class="card-header bg-success text-white">Patient Records</div>
+
+        <div class="card-body table-responsive">
+          <table
+            class="table table-bordered table-hover align-middle text-center"
+          >
+            <thead class="table-light">
+              <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Admission</th>
+                <th>Discharge</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Vineetha</td>
+                <td>Female</td>
+                <td>9876543210</td>
+                <td>2026-01-24</td>
+                <td>2026-02-24</td>
+                <td>
+                  <button class="btn btn-warning btn-sm me-1">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
