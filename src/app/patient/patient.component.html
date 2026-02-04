@@ -75,7 +75,11 @@
               />
             </div>
 
-            <button type="submit" class="btn btn-primary w-100" (click)="addpatient()">
+            <button
+              type="submit"
+              class="btn btn-primary w-100"
+              (click)="addpatient()"
+            >
               Save Patient
             </button>
           </form>
@@ -94,8 +98,11 @@
           >
             <thead class="table-light">
               <tr>
+                <th>Patient-id</th>
                 <th>Name</th>
+                <th>DOB</th>
                 <th>Gender</th>
+                <th>Address</th>
                 <th>Phone</th>
                 <th>Admission</th>
                 <th>Discharge</th>
@@ -104,16 +111,34 @@
             </thead>
 
             <tbody>
-              <tr>
-                <td>Vineetha</td>
-                <td>Female</td>
-                <td>9876543210</td>
-                <td>2026-01-24</td>
-                <td>2026-02-24</td>
+              <tr *ngFor="let patient of patients">
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.name }}</td>
+                <td>{{ patient.date_of_birth }}</td>
+                <td>{{ patient.gender }}</td>
+                <td>{{ patient.address }}</td>
+                <td>{{ patient.phone_number }}</td>
+                <td>{{ patient.admission_date }}</td>
+                <td>{{ patient.discharge_date }}</td>
                 <td>
-                  <button class="btn btn-warning btn-sm me-1">Edit</button>
-                  <button class="btn btn-danger btn-sm">Delete</button>
+                  <button
+                    class="btn btn-warning btn-sm me-1 my-3"
+                    (click)="update(patient.id)"
+                  >
+                    Update
+                  </button>
+                  <button
+                    class="btn btn-danger btn-sm"
+                    (click)="delete(patient.id)"
+                  >
+                    Delete
+                  </button>
                 </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr *ngIf="patients.length === 0">
+                <td colspan="9" class="text-center py-4">No Data Found</td>
               </tr>
             </tbody>
           </table>

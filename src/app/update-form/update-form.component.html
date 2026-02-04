@@ -1,0 +1,83 @@
+<div class="col-lg-4">
+  <div class="card shadow">
+    <div class="card-header bg-primary text-white">Update Patient</div>
+
+    <div class="card-body">
+      <form [formGroup]="updateForm">
+        <div class="mb-3">
+          <label class="form-label">Patient Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter name" formControlName="name"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Date of Birth</label>
+          <input
+            type="date"
+            class="form-control"
+            formControlName="date_of_birth"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Gender</label>
+          <select class="form-select" formControlName="gender" formControlName="gender">
+            <option selected disabled>Select</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter phone number"
+            formControlName="phone_number"
+            
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Address</label>
+          <textarea
+            class="form-control"
+            rows="2"
+            placeholder="Enter address"
+            formControlName="address"
+          ></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Admission Date</label>
+          <input
+            type="date"
+            class="form-control"
+            formControlName="admission_date"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Discharge Date</label>
+          <input
+            type="date"
+            class="form-control"
+            formControlName="discharge_date"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary w-100"
+          (click)="update()"
+        >
+          Update Patient
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
