@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center min-vh-100">
+    <div class="col-md-5">
+      <div class="card shadow-lg border-0 rounded-4">
+        
+        <div class="card-header bg-primary text-white text-center rounded-top-4">
+          <h4 class="mb-0">Create Account</h4>
+        </div>
+
+        <div class="card-body p-4">
+          <form [formGroup]="registerForm">
+
+            <!-- Name -->
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your name" formControlName="name"
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter email"
+                formControlName="email"
+              />
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Enter password"
+                formControlName="password"
+              />
+            </div>
+
+
+            <!-- Register Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg" (click)="register()">
+                Register
+              </button>
+            </div>
+
+          </form>
+
+          <!-- Login link -->
+          <div class="text-center mt-3">
+            <span>Already have an account?</span>
+            <a routerLink="/login" class="text-decoration-none fw-semibold">
+              Login
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

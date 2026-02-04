@@ -1,1 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container d-flex justify-content-center gap-3 my-3">
+    <button
+    class="btn btn-danger"
+    (click)="logout()"
+    *ngIf="isLoggedIn()"
+  >
+    Logout
+  </button>
+
+  <!-- Show only when NOT logged in -->
+  <button
+    class="btn btn-primary"
+    routerLink="/login"
+    *ngIf="!isLoggedIn()"
+  >
+    Login
+  </button>
+
+  <button
+    class="btn btn-info text-light"
+    routerLink="/"
+    *ngIf="isLoggedIn()"
+  >
+    Home
+  </button>
+  </div>
+</nav>
 <router-outlet></router-outlet>
